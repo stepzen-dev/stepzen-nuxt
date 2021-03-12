@@ -114,6 +114,8 @@ To fetch the mountain data from the [NuxtJS Mountain API](https://api.nuxtjs.dev
 Fill in your username and set the URL in `fetch()`
 
 ```html
+// components/NuxtMountains.vue
+
 <template>
   <p v-if="$fetchState.pending">
     Fetching...
