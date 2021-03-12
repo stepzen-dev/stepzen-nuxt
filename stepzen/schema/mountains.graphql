@@ -1,0 +1,19 @@
+interface Mountain {
+  title: String!
+}
+
+type Query {
+  mountains: [Mountain]
+}
+
+type MountainBackend implements Mountain {}
+
+type Query {
+  mountainsBackend: [MountainBackend]
+    @supplies(
+      query:"mountains"
+    )
+    @rest(
+      endpoint:"https://api.nuxtjs.dev/mountains"
+    )
+}
