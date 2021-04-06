@@ -96,7 +96,7 @@ schema
 ### Deploy API
 
 ```bash
-stepzen start stepzen-nuxt/mountains
+stepzen start
 ```
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fq8g467eb8h8xl5kpv4v.png)
