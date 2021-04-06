@@ -45,7 +45,7 @@ Our root component renders a title to the home page.
 Start the development server on `localhost:3000` with the following command:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 ## 3. Setup GraphQL API
@@ -59,21 +59,12 @@ To setup our StepZen API create the following:
 ```graphql
 # stepzen/schema/mountains.graphql
 
-interface Mountain {
+type Mountain {
   title: String!
 }
 
 type Query {
   mountains: [Mountain]
-}
-
-type MountainBackend implements Mountain {}
-
-type Query {
-  mountainsBackend: [MountainBackend]
-    @supplies(
-      query:"mountains"
-    )
     @rest(
       endpoint:"https://api.nuxtjs.dev/mountains"
     )
@@ -81,12 +72,12 @@ type Query {
 ```
 
 ```graphql
-# stepzen/schema/index.graphql
+# stepzen/index.graphql
 
 schema
   @sdl(
     files: [
-      "mountains.graphql"
+      "schema/mountains.graphql"
     ]
   ) {
   query: Query
@@ -99,7 +90,13 @@ schema
 stepzen start
 ```
 
-![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fq8g467eb8h8xl5kpv4v.png)
+```graphql
+query getMountains {
+  mountains {
+    title
+  }
+}
+```
 
 This also deployed our API to `https://username.stepzen.net/stepzen-nuxt-tutorial/users/__graphql`.
 
@@ -170,7 +167,7 @@ touch nuxt.config.js
 
 ```javascript
 export default {
-    components: true
+  components: true
 }
 ```
 
