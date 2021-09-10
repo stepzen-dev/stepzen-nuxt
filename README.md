@@ -1,60 +1,24 @@
 ## 1. Project Setup
 
-Create a project directory and a `package.json`.
+Clone repo and install dependencies.
 
 ```bash
-mkdir stepzen-nuxt && cd stepzen-nuxt && npm init -y
+git clone https://github.com/stepzen-samples/stepzen-nuxt.git
+cd stepzen-nuxt
+npm i
 ```
 
-Add the following scripts to your `package.json`.
-
-```json
-"scripts": {
-  "dev": "nuxt",
-  "build": "nuxt build",
-  "generate": "nuxt generate",
-  "start": "nuxt start"
-},
-```
-
-Install the necessary dependencies
-
-```bash
-yarn add nuxt
-```
-
-## 2. Setup Nuxt App
-
-To setup our Nuxt frontend create the following:
-
-1. Directory for `pages`
-2. An `index.vue` file for our home page
-
-Our root component renders a title to the home page.
-
-```html
-// pages/index.vue
-
-<template>
-  <div>
-    <h1>StepZen Nuxt Tutorial</h1>
-  </div>
-</template>
-```
-
-Start the development server on `localhost:3000` with the following command:
+Start the development server on `localhost:3000`.
 
 ```bash
 npm run dev
 ```
 
-## 3. Setup GraphQL API
+You will initially see an error, `Cannot read property 'mountains' of undefined`, because we haven't included our StepZen endpoint yet. See the next section for instructions to include your endpoint.
 
-To setup our StepZen API create the following:
+## 2. GraphQL API
 
-1. A `stepzen` directory containing a `schema` directory
-2. A `mountains.graphql` file for our `Mountain` interface and `Query` type
-3. An `index.graphql` file for our `schema`
+`mountains.graphql` file in our `schema` directory for our `Mountain` interface and `Query` type
 
 ```graphql
 # stepzen/schema/mountains.graphql
@@ -71,6 +35,8 @@ type Query {
 }
 ```
 
+`index.graphql` file for our `schema`
+
 ```graphql
 # stepzen/index.graphql
 
@@ -86,9 +52,13 @@ schema
 
 ### Deploy API
 
+Deploy your API with `stepzen start`.
+
 ```bash
 stepzen start
 ```
+
+Send the following test query to verify your endpoint is working.
 
 ```graphql
 query getMountains {
@@ -100,17 +70,11 @@ query getMountains {
 
 This also deployed our API to `https://username.stepzen.net/stepzen-nuxt-tutorial/users/__graphql`.
 
+## 3. `NuxtMountains` component
 
-### Create `NuxtMountains` component
+We have a directory for `components` with a `NuxtMountains.vue` file. This contains our query to fetch the mountain data from the [NuxtJS Mountain API](https://api.nuxtjs.dev/mountains).
 
-To fetch the mountain data from the [NuxtJS Mountain API](https://api.nuxtjs.dev/mountains) create the following:
-
-1. Directory for `components`
-2. A `NuxtMountains.vue` file for our query
-
-Fill in your username and set the URL in `fetch()`
-
-```html
+```vue
 // components/NuxtMountains.vue
 
 <template>
@@ -159,27 +123,31 @@ Fill in your username and set the URL in `fetch()`
 </script>
 ```
 
-Create a file in your root directory called `nuxt.config.js`.
+Fill in your username for `https://username.stepzen.net/stepzen-nuxt-tutorial/users/__graphql` and set the URL in `fetch()`. This is the API call that needs to be made [in a serverless function](https://github.com/stepzen-samples/stepzen-nuxt/issues/2) to protect your StepZen keys.
 
-```bash
-touch nuxt.config.js
-```
+## 4. Nuxt App
 
-```javascript
-export default {
-  components: true
-}
-```
+Our Nuxt frontend contains an `index.vue` file for our home page inside a directory for `pages`. Our root component renders a title to the home page.
 
-Now you can use any components inside the `components` directory without needing to import the components.
+```vue
+// pages/index.vue
 
-```html
 <template>
   <div>
-    <h1>Hello world!</h1>
+    <h1>StepZen Nuxt Tutorial</h1>
     <NuxtMountains />
   </div>
 </template>
 ```
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lglwi3luxk2xgn9e4527.png)
+
+## 5. `nuxt.config.js`
+
+Adding `true` for `components` lets you use any components inside the `components` directory without needing to import the components.
+
+```javascript
+export default {
+  components: true
+}
+```
