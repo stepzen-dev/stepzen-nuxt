@@ -1,0 +1,4 @@
+{
+  "endpoint": "api/stepzen-nuxt-tutorial",
+  "root": "stepzen/schema"
+}
