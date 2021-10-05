@@ -38,7 +38,7 @@ query getMountains {
 
 This also deployed our API to `https://${username}.stepzen.net/stepzen-nuxt-tutorial/users/__graphql` where `${username}` is your [StepZen account name](https://stepzen.com/account).
 
-**Note:** Make sure to run `cp .env.sample .env` and fill in the environment details using the output from the "Deploy API" step (`stepzen start`) and your [StepZen account page](https://stepzen.com/account) as a reference.
+**Note:** Make sure to run `cp .env.example .env` and fill in the environment details using the output from the "Deploy API" step (`stepzen start`) and your [StepZen account page](https://stepzen.com/account) as a reference.
 
 Your `.env` file should look similar to:
 
