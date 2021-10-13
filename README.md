@@ -18,7 +18,7 @@ npm run dev
 
 You will initially see an error, `Cannot read property 'mountains' of undefined`, because we haven't included our StepZen endpoint yet. See the next section for instructions to include your endpoint.
 
-### 2. Deploy API
+## 2. Deploy API
 
 Deploy your API with `stepzen start`.
 
