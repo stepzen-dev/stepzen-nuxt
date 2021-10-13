@@ -1,3 +1,16 @@
+# StepZen+Nuxt
+
+This sample repo uses the [Nuxt Mountains API](https://api.nuxtjs.dev/mountains) and StepZen's [`@rest` directive](https://stepzen.com/docs/connecting-backends/how-to-connect-a-rest-service) to fetch a list of mountains and expose a GraphQL API to our Nuxt frontend.
+
+## Outline
+
+* [Project Setup](#1-project-setup)
+* [Deploy API](#2-deploy-api)
+  * [GraphQL API](#21-graphql-api)
+* [Mountains Component - `NuxtMountains.vue`](#3-mountains-component---nuxtmountainsvue)
+* [Nuxt App - `index.vue`](#4-nuxt-app---indexvue)
+* [Configuration - `nuxt.config.js`](#5-configuration---nuxtconfigjs)
+
 ## 1. Project Setup
 
 Before you get started, you'll need to get yourself a [StepZen account](https://stepzen.com/request-invite) and [install the StepZen CLI](https://stepzen.com/docs/quick-start).
