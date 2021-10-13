@@ -52,13 +52,13 @@ REACT_APP_STEPZEN_ENDPOINT=https://foousername.stepzen.net/stepzen-nuxt-tutorial
 For more information around the GraphQL API, please look at the [`mountains.graphql`](stepzen/schema/mountains.graphql) file in our `schema` directory for our `Mountain` interface and `Query` type.
 
 
-## 3. `NuxtMountains` component
+## 3. Mountains Component - `NuxtMountains.vue`
 
 We have a directory for `components` with a [`NuxtMountains.vue`](./components/NuxtMountains.vue) file. This contains our query to fetch the mountain data from the [NuxtJS Mountain API](https://api.nuxtjs.dev/mountains).
 
 The endpoint used in `fetch()` is the API call that needs to be made [in a serverless function](https://github.com/stepzen-samples/stepzen-nuxt/issues/2) to protect your StepZen keys.
 
-## 4. Nuxt App
+## 4. Nuxt App - `index.vue`
 
 Our Nuxt frontend contains an `index.vue` file for our home page inside a directory for `pages`. Our root component renders a title to the home page.
 
@@ -75,7 +75,7 @@ Our Nuxt frontend contains an `index.vue` file for our home page inside a direct
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lglwi3luxk2xgn9e4527.png)
 
-## 5. `nuxt.config.js`
+## 5. Configuration - `nuxt.config.js`
 
 Adding `true` for `components` lets you use any components inside the `components` directory without needing to import the components.
 
