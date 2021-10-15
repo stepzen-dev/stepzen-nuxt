@@ -2,10 +2,6 @@
   <p v-if="$fetchState.pending">
     Fetching...
   </p>
-  
-  <!-- <p v-else-if="$fetchState.error">
-    Error
-  </p> -->
 
   <div v-else>
     <h2>Mountains</h2>
@@ -17,7 +13,6 @@
         {{ mountain.title }}
       </li>
     </ul>
-    <!-- <button @click="$fetch">Refresh</button> -->
   </div>
 </template>
 
