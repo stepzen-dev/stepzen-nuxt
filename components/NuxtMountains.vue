@@ -25,12 +25,12 @@
     },
     async fetch() {
       this.mountains = await fetch(
-        `${process.env.REACT_APP_STEPZEN_ENDPOINT}`,
+        `${process.env.STEPZEN_ENDPOINT}`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `apikey ${process.env.REACT_APP_STEPZEN_API_KEY}`
+            'Authorization': `apikey ${process.env.STEPZEN_API_KEY}`
           },
           body: JSON.stringify(
             { query: '{ mountains { title } }' }
