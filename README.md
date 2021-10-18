@@ -56,8 +56,8 @@ This also deployed our API to `https://${username}.stepzen.net/stepzen-nuxt-tuto
 Your `.env` file should look similar to:
 
 ```sh
-REACT_APP_STEPZEN_API_KEY=foousername+9001::1e9e17d05711e0f09271db4888b66e364df638fe0c77ea33984599c5b87f9427
-REACT_APP_STEPZEN_ENDPOINT=https://foousername.stepzen.net/stepzen-nuxt-tutorial/users/__graphql
+STEPZEN_API_KEY=foousername+9001::1e9e17d05711e0f09271db4888b66e364df638fe0c77ea33984599c5b87f9427
+STEPZEN_ENDPOINT=https://foousername.stepzen.net/stepzen-nuxt-tutorial/users/__graphql
 ```
 
 ### 2.1 GraphQL API
