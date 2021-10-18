@@ -2,10 +2,6 @@
   <p v-if="$fetchState.pending">
     Fetching...
   </p>
-  
-  <!-- <p v-else-if="$fetchState.error">
-    Error
-  </p> -->
 
   <div v-else>
     <h2>Mountains</h2>
@@ -17,7 +13,6 @@
         {{ mountain.title }}
       </li>
     </ul>
-    <!-- <button @click="$fetch">Refresh</button> -->
   </div>
 </template>
 
@@ -30,12 +25,12 @@
     },
     async fetch() {
       this.mountains = await fetch(
-        `${process.env.REACT_APP_STEPZEN_ENDPOINT}`,
+        `${process.env.STEPZEN_ENDPOINT}`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `apikey ${process.env.REACT_APP_STEPZEN_API_KEY}`
+            'Authorization': `apikey ${process.env.STEPZEN_API_KEY}`
           },
           body: JSON.stringify(
             { query: '{ mountains { title } }' }
