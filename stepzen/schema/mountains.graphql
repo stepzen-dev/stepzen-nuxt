@@ -3,8 +3,21 @@ type Mountain {
 }
 
 type Query {
-  mountains: [Mountain]
-    @rest(
-      endpoint:"https://api.nuxtjs.dev/mountains"
-    )
+  mountains: [Mountain] @rest(endpoint: "https://api.nuxtjs.dev/mountains")
+}
+
+type debug {
+  args: JSON
+  data: JSON
+  files: JSON
+  form: JSON
+  headers: JSON
+  json: JSON
+  method: String
+  url: String
+}
+
+type Query {
+  debugger(id: String!): debug
+    @rest(endpoint: "https://httpbin.org/anything/$id")
 }
