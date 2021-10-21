@@ -2,10 +2,6 @@
   <p v-if="$fetchState.pending">
     Fetching...
   </p>
-  
-  <!-- <p v-else-if="$fetchState.error">
-    Error
-  </p> -->
 
   <div v-else>
     <h2>Mountains</h2>
@@ -14,10 +10,10 @@
         v-for="mountain of mountains.data.mountains"
         v-bind:key="mountain.items"
       >
-        {{ mountain.title }}
+        <nuxt-link :to="{ name: 'mountains-id', params: { id: mountain.title } }">{{ mountain.title }}</nuxt-link>
       </li>
     </ul>
-    <!-- <button @click="$fetch">Refresh</button> -->
+    
   </div>
 </template>
 
