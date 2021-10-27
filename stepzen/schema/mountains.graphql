@@ -1,5 +1,15 @@
 type Mountain {
   title: String!
+  description: String
+  height: String
+  countries: [String]
+  continent: String
+  image: String
+  dir: String
+  path: String
+  slug: String
+  updatedAt: String
+
 }
 
 type Query {
