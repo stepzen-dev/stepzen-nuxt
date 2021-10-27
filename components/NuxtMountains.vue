@@ -10,7 +10,7 @@
         v-for="mountain of mountains.data.mountains"
         v-bind:key="mountain.items"
       >
-        {{ mountain.title }}
+        <nuxt-link :to="{ name: 'mountains-id', params: { id: mountain.title } }">{{ mountain.title }}</nuxt-link>
       </li>
     </ul>
   </div>
