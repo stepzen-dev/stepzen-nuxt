@@ -13,7 +13,6 @@
         <nuxt-link :to="{ name: 'mountains-id', params: { id: mountain.title } }">{{ mountain.title }}</nuxt-link>
       </li>
     </ul>
-    
   </div>
 </template>
 
